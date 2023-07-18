@@ -16,10 +16,10 @@ class BaseControllerTest extends AbstractIntegrationTest{
 
     @Test
     public void simpleTest() {
-        String fooResource = "/foo";
+        String fooResource = "/hello";
 
-        restTemplate.put(fooResource, "bar");
+        String s = restTemplate.getForObject(fooResource, String.class);
 
-        assertThat(restTemplate.getForObject(fooResource, String.class)).as("value is set").isEqualTo("bar");
+        assertThat(s).isEqualTo("Hello World");
     }
 }

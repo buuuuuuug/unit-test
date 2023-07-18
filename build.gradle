@@ -1,3 +1,9 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+    }
+}
+
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.1.1'
@@ -18,8 +24,13 @@ configurations {
     }
 }
 
-repositories {
-    mavenCentral()
+//repositories {
+//    mavenCentral()
+//}
+allprojects {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+    }
 }
 
 dependencies {
